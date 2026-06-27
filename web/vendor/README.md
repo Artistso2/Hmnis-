@@ -9,3 +9,4 @@ These files are vendored locally so the GitHub Pages visual novel can run withou
 | `howler.min.js` | future spoken-word/audio log playback support | MIT |
 
 Author-control rule still applies: these libraries may enhance navigation, visuals, search, and accessibility, but they must not generate or invent story content.
+| `leaflet/` | future map display for approved timeline coordinates; can use OSM tiles on public web or remain data-only | BSD-2-Clause |

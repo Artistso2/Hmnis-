@@ -105,3 +105,42 @@ Visual rule:
 > Glass horizons. Something new. Personal artworks and pictures. The faces are the author's own face. The website should feel luminous, personal, forensic, digital, fragile, and forward-facing without losing the author-control rule.
 
 The web app uses the images as evidence/memory/signal cards. They do not create plot facts by themselves.
+
+## Source Ingest / Timeline / Map Roadmap
+
+The project now includes an author-controlled ingest pipeline:
+
+```text
+source_ingest/raw/        # drop original documents, chats, logs, map exports
+source_ingest/processed/  # generated timeline/statement candidates
+timeline/master_timeline.csv
+maps/locations.csv
+maps/google_my_maps_import.csv
+maps/locations.kml
+maps/locations.geojson
+web/map.html
+```
+
+### Extract timeline candidates
+
+```bash
+python3 scripts/extract_timeline_candidates.py
+```
+
+This does not decide truth. It only finds candidate lines for author review.
+
+### Build Google Maps / My Maps exports
+
+```bash
+python3 scripts/build_map_exports.py
+```
+
+This generates CSV, KML, and GeoJSON from approved locations only.
+
+### Timeline map page
+
+```text
+https://artistso2.github.io/Hmnis-/web/map.html
+```
+
+No Google API key is stored in the public repo. Use `maps/google_my_maps_import.csv` or `maps/locations.kml` to import approved locations into Google My Maps.

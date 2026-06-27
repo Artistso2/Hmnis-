@@ -1,0 +1,2 @@
+location_id,label,location_type,address_or_description,city,state,country,latitude,longitude,start_date,end_date,source_id,evidence_label,verification_status,public_display,notes
+LOC-0001,"June 2025 Awakening Location",UNKNOWN,"[UNKNOWN — STEVEN HAS NOT PROVIDED THIS]",,,USA,,,2025-06,,SRC-0001,TIMELINE_DECLARATION,AUTHOR_DECLARED,no,"Opening point exists; exact place must come from Steven."

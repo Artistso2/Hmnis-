@@ -19,6 +19,12 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Extract timeline candidates
+        run: python3 scripts/extract_timeline_candidates.py
+
+      - name: Build map exports
+        run: python3 scripts/build_map_exports.py
+
       - name: Build EPUB
         run: python3 scripts/build_epub.py
 
@@ -28,6 +34,9 @@ jobs:
           test -f web/index.html
           test -f web/story_data.js
           test -f web/style.css
+          test -f web/map.html
+          test -f maps/google_my_maps_import.csv
+          test -f maps/locations.kml
           test -f downloads/hello_my_name_is_steven.epub
 
       - name: Upload EPUB artifact
