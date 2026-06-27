@@ -72,6 +72,15 @@
     });
   });
 
+
+  window.HMNIS = {
+    render(nodeId, pushHistory) {
+      if (pushHistory) state.history.push(state.current);
+      render(nodeId);
+    },
+    current() { return state.current; }
+  };
+
   els.backBtn.addEventListener('click', () => {
     const previous = state.history.pop();
     if (previous) render(previous);

@@ -126,3 +126,6 @@ const STORY = {
     }
   }
 };
+
+
+window.STORY = STORY;

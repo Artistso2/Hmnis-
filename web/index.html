@@ -47,6 +47,17 @@
           <div class="text-box" id="text"></div>
           <div class="tags" id="tags"></div>
           <div class="choices" id="choices"></div>
+
+          <div class="plugin-bar" aria-label="Project tools">
+            <button id="searchToggle" type="button">Search Nodes</button>
+            <a href="../downloads/hello_my_name_is_steven.epub" download>Download EPUB</a>
+            <a href="https://github.com/Artistso2/Hmnis-" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div id="searchPanel" class="search-panel" hidden>
+            <label for="searchInput">Search the visual novel scaffold</label>
+            <input id="searchInput" type="search" placeholder="Search tags, dates, body log, recursion…">
+            <div id="searchResults" class="search-results"></div>
+          </div>
         </section>
       </article>
     </section>
@@ -57,7 +68,14 @@
       <span class="rule">No invented facts. Steven’s words are the source.</span>
     </footer>
   </main>
+  <script src="vendor/fuse.min.js"></script>
+  <script src="vendor/medium-zoom.min.js"></script>
+  <script src="vendor/howler.min.js"></script>
   <script src="story_data.js"></script>
   <script src="app.js"></script>
+  <script src="plugins/glass_horizon.js"></script>
+  <script src="plugins/zoom.js"></script>
+  <script src="plugins/audio_ready.js"></script>
+  <script src="plugins/search.js"></script>
 </body>
 </html>

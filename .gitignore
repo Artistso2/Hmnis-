@@ -21,3 +21,7 @@ output/
 
 # Intermediate EPUB build files
 epub_build/
+
+# Public downloadable book artifacts
+!downloads/
+!downloads/*.epub

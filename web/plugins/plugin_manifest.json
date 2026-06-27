@@ -1,0 +1,30 @@
+{
+  "project": "HELLO, MY NAME IS STEVEN",
+  "rule": "Plugins enhance structure, visuals, navigation, and accessibility. Plugins do not invent facts.",
+  "plugins": [
+    {
+      "id": "search",
+      "file": "plugins/search.js",
+      "uses": "vendor/fuse.min.js",
+      "purpose": "Search author-provided story nodes and scaffold tags."
+    },
+    {
+      "id": "visual_zoom",
+      "file": "plugins/zoom.js",
+      "uses": "vendor/medium-zoom.min.js",
+      "purpose": "Zoom visual evidence and memory cards."
+    },
+    {
+      "id": "glass_horizon",
+      "file": "plugins/glass_horizon.js",
+      "uses": "native browser APIs",
+      "purpose": "Adds subtle glass-horizon light tracking without changing content."
+    },
+    {
+      "id": "audio_ready",
+      "file": "plugins/audio_ready.js",
+      "uses": "vendor/howler.min.js",
+      "purpose": "Prepares future voice-log or spoken-word playback hooks. No audio is invented."
+    }
+  ]
+}

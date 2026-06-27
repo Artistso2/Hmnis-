@@ -283,3 +283,92 @@ footer button:hover, footer button:focus { outline: none; border-color: var(--ac
   footer { flex-wrap: wrap; }
   .rule { margin-left: 0; width: 100%; }
 }
+
+/* Plugin UI */
+.horizon-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 42%), rgba(255,139,216,0.16), transparent 24%);
+  transition: background-position 140ms linear;
+}
+
+.plugin-bar {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.plugin-bar button,
+.plugin-bar a {
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 9px 12px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.plugin-bar button:hover,
+.plugin-bar button:focus,
+.plugin-bar a:hover,
+.plugin-bar a:focus {
+  outline: none;
+  border-color: var(--accent2);
+  box-shadow: 0 0 0 3px rgba(255,139,216,0.14);
+}
+
+.search-panel {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.28);
+}
+
+.search-panel label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin-bottom: 8px;
+}
+
+.search-panel input {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--text);
+  background: rgba(255,255,255,0.07);
+}
+
+.search-results {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.search-result {
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  padding: 10px;
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  cursor: pointer;
+}
+
+.search-result strong,
+.search-result span {
+  display: block;
+}
+
+.search-result strong { color: var(--accent); margin-bottom: 3px; }
+.search-result span { color: var(--muted); font-size: 0.9rem; line-height: 1.35; }
+.search-empty { color: var(--muted); margin: 0; }

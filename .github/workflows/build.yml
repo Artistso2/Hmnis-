@@ -1,0 +1,37 @@
+name: Build EPUB and Validate Static Site
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build EPUB
+        run: python3 scripts/build_epub.py
+
+      - name: Verify web entry files
+        run: |
+          test -f index.html
+          test -f web/index.html
+          test -f web/story_data.js
+          test -f web/style.css
+          test -f downloads/hello_my_name_is_steven.epub
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hello-my-name-is-steven-epub
+          path: output/hello_my_name_is_steven.epub
