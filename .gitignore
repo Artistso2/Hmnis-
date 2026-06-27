@@ -25,3 +25,11 @@ epub_build/
 # Public downloadable book artifacts
 !downloads/
 !downloads/*.epub
+
+# Private raw source ingest: preserve locally, do not publish by default
+source_ingest/raw/**/*
+!source_ingest/raw/**/.gitkeep
+
+# Private review outputs may contain direct quotes/sensitive material
+private_review/
+source_ingest/processed/private/
