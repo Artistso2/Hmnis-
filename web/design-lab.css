@@ -1,0 +1,90 @@
+:root {
+  --ink: #101015;
+  --paper: #f2eadf;
+  --bone: #fff7ed;
+  --ash: #6f6a66;
+  --blood: #9f1239;
+  --rose: #e879b9;
+  --cyan: #6ee7f9;
+  --night: #06030a;
+  --graphite: #1c1d22;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(159,18,57,0.12), transparent 25%),
+    radial-gradient(circle at 90% 12%, rgba(110,231,249,0.13), transparent 26%),
+    linear-gradient(135deg, #f7efe2 0%, #e5ddcf 42%, #141115 42.2%, #07050a 100%);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.24;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0 1px, transparent 1px 4px),
+    radial-gradient(circle, rgba(0,0,0,0.18) 0 0.7px, transparent 0.8px);
+  background-size: auto, 18px 18px;
+  mix-blend-mode: multiply;
+}
+.lab { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 44px 0 80px; position: relative; }
+.lab-hero {
+  min-height: 52vh;
+  display: grid;
+  align-content: center;
+  padding: clamp(24px, 6vw, 72px);
+  border-radius: 34px;
+  background:
+    linear-gradient(115deg, rgba(255,247,237,0.88) 0 48%, rgba(16,16,21,0.88) 48.2% 100%),
+    url('assets/portrait_vertical.jpg') right center / contain no-repeat;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 28px 90px rgba(0,0,0,0.28);
+  overflow: hidden;
+}
+.brand-mark img { width: 74px; height: 74px; border-radius: 22px; box-shadow: 0 0 35px rgba(232,121,185,0.35); }
+.eyebrow { color: var(--blood); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.78rem; font-weight: 900; }
+h1 { max-width: 760px; margin: 12px 0; font-size: clamp(3.6rem, 10vw, 8.8rem); letter-spacing: -0.075em; line-height: 0.82; }
+.dek { max-width: 650px; color: #35302d; font-size: clamp(1.08rem, 2vw, 1.35rem); line-height: 1.55; font-weight: 520; }
+.lab-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.lab-actions a { color: var(--bone); background: var(--ink); text-decoration: none; padding: 11px 14px; border-radius: 999px; font-weight: 800; }
+.lab-actions a:hover { background: var(--blood); }
+.theme-grid { display: grid; gap: 22px; margin-top: 28px; }
+.theme-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(300px, 1.22fr);
+  min-height: 360px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+}
+.theme-image { min-height: 360px; background: #111; }
+.theme-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.03) saturate(1.03); }
+.theme-copy { padding: clamp(24px, 4vw, 46px); }
+.theme-label { margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 900; font-size: 0.76rem; }
+.theme-copy h2 { margin: 0; font-size: clamp(2rem, 4vw, 4.6rem); line-height: 0.9; letter-spacing: -0.06em; }
+.theme-copy p, .theme-copy li { font-size: 1.02rem; line-height: 1.55; }
+.theme-copy ul { margin: 18px 0 0; padding-left: 19px; }
+.raw { background: var(--paper); }
+.raw .theme-label { color: var(--blood); }
+.evidence { background: var(--graphite); color: var(--bone); }
+.evidence .theme-label { color: var(--cyan); }
+.organic { background: linear-gradient(135deg, #21131b, #09070b); color: var(--bone); }
+.organic .theme-label { color: var(--rose); }
+.horizon { background: #eaf5ff; }
+.horizon .theme-label { color: #1d4ed8; }
+.direction-note { margin-top: 28px; border-radius: 28px; padding: clamp(24px, 4vw, 46px); background: rgba(255,247,237,0.92); border: 1px solid rgba(0,0,0,0.12); }
+.direction-note h2 { margin-top: 0; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.05em; }
+.direction-note p { max-width: 850px; line-height: 1.6; font-size: 1.12rem; }
+@media (max-width: 820px) {
+  body { background: #f2eadf; }
+  .lab { width: min(100% - 20px, 1180px); padding-top: 10px; }
+  .lab-hero { background: rgba(255,247,237,0.94); min-height: auto; }
+  h1 { font-size: clamp(3rem, 18vw, 6rem); }
+  .theme-card { grid-template-columns: 1fr; }
+  .theme-image { min-height: 280px; }
+}
