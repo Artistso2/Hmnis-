@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello, My Name is Steven — Glass Horizons</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <section class="stage">
+      <div class="horizon-bg" aria-hidden="true"></div>
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <article class="shell">
+        <aside class="visual-column" aria-label="Visual evidence panel">
+          <div class="icon-orbit">
+            <img src="assets/glass_horizon_icon.png" alt="Glass horizon pen-nib icon" class="app-icon">
+          </div>
+          <figure class="visual-card">
+            <img id="sceneImage" src="assets/glass_horizon_icon.png" alt="Current scene visual">
+            <figcaption id="imageCaption">Glass Horizons</figcaption>
+          </figure>
+          <div class="gallery-strip" aria-label="Author-provided visual theme assets">
+            <button class="thumb" type="button" data-target="assets/glass_horizon_icon.png" aria-label="Glass icon"><img src="assets/glass_horizon_icon.png" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/portrait_headphones.jpg" aria-label="Portrait headphones"><img src="assets/portrait_headphones.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/portrait_vertical.jpg" aria-label="Portrait vertical"><img src="assets/portrait_vertical.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/flag_horizon.jpg" aria-label="Flag horizon"><img src="assets/flag_horizon.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/art_01.jpg" aria-label="Artwork 1"><img src="assets/art_01.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/art_02.jpg" aria-label="Artwork 2"><img src="assets/art_02.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/art_03.jpg" aria-label="Artwork 3"><img src="assets/art_03.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/art_04.jpg" aria-label="Artwork 4"><img src="assets/art_04.jpg" alt=""></button>
+            <button class="thumb" type="button" data-target="assets/art_05.jpg" aria-label="Artwork 5"><img src="assets/art_05.jpg" alt=""></button>
+          </div>
+        </aside>
+
+        <section class="text-panel">
+          <div class="meta-row">
+            <span id="date">—</span>
+            <span id="location">—</span>
+          </div>
+          <p class="kicker">VISUAL WRIT / AUTHOR-CONTROLLED WEB NOVEL</p>
+          <h1 id="title">HELLO, MY NAME IS STEVEN</h1>
+          <p id="subtitle">Author-controlled visual novel scaffold</p>
+          <div class="speaker" id="speaker">Steven</div>
+          <div class="text-box" id="text"></div>
+          <div class="tags" id="tags"></div>
+          <div class="choices" id="choices"></div>
+        </section>
+      </article>
+    </section>
+
+    <footer>
+      <button id="backBtn" type="button">Back</button>
+      <button id="resetBtn" type="button">Reset</button>
+      <span class="rule">No invented facts. Steven’s words are the source.</span>
+    </footer>
+  </main>
+  <script src="story_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
