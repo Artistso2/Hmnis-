@@ -22,7 +22,7 @@
 
 ## Internal Scaffold
 
-- **Date:** [DATE IN LINEAR SEQUENCE AFTER JUNE 2025 AWAKENING — memory recursion enters here]
+- **Date:** [UNKNOWN — STEVEN HAS NOT PROVIDED THIS FOR THIS CHAPTER — memory recursion enters here]
 - **Location:** Memory recursion to: 702 L Street, Hoquiam, WA 98520 (crisis clinic); subsequent placements in Grays Harbor County; current: 648 Ocean Shores Blvd, Room 211
 - **Present-time status:** Steven recognizes physical facts that do not align with internal continuity. The body does not match the archive. Hyperthymesia makes this mismatch unbearable — a perfect memory system with 27 years of data missing.
 - **Body log:** Chemical castration; incontinence; convulsions; seizures; blindness; deafness; vocal cord damage; equilibrium destroyed; spatial awareness gone; forced to relearn walking for the third time; pharmacological amnesia; pharmacological anesthesia; 23 different antipsychotics/mood stabilizers/neurological sedatives from January 2018 to November 3, 2024; overdoses up to 60,000 mg

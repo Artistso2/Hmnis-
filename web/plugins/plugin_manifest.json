@@ -25,6 +25,12 @@
       "file": "plugins/audio_ready.js",
       "uses": "vendor/howler.min.js",
       "purpose": "Prepares future voice-log or spoken-word playback hooks. No audio is invented."
+    },
+    {
+      "id": "low_vision_mode",
+      "file": "plugins/low_vision_mode.js",
+      "uses": "native browser APIs + localStorage",
+      "purpose": "High-contrast pink-on-black mode for Steven's visual profile. Toggle via fixed button. Persists across sessions."
     }
   ]
 }
