@@ -1,0 +1,25 @@
+.hmnis-global-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 16px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: rgba(255, 248, 239, 0.78);
+  color: #20212a;
+  border-bottom: 1px solid rgba(32,33,42,.14);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+}
+.hmnis-crumbs { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; font-size: 0.88rem; color: #6d6d78; }
+.hmnis-crumbs a, .hmnis-nav-links a { color: #203548; text-decoration: none; font-weight: 850; }
+.hmnis-crumbs a:hover, .hmnis-nav-links a:hover { text-decoration: underline; }
+.hmnis-current { color: #9e496c; font-weight: 900; }
+.hmnis-nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 0.84rem; }
+.hmnis-nav-links a { border: 1px solid rgba(32,33,42,.14); border-radius: 999px; padding: 5px 8px; background: rgba(255,255,255,.42); }
+@media (max-width: 760px) {
+  .hmnis-global-nav { position: relative; align-items: flex-start; flex-direction: column; }
+}

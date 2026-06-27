@@ -217,3 +217,20 @@ Public/legal review principle:
 ```text
 Private raw first-person Steven voice; public materials attorney-ready, source-grounded, transparent, and reviewed.
 ```
+
+## Project Index / Breadcrumb System
+
+The root `index.html` is now the single magic-link home base for the entire project:
+
+```text
+https://artistso2.github.io/Hmnis-/
+```
+
+Every major HTML page in `web/` loads:
+
+```text
+web/navigation.css
+web/navigation.js
+```
+
+This injects a breadcrumb/top navigation bar back to the Project Index and key project pages.

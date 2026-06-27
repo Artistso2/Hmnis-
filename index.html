@@ -3,20 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=web/">
-  <title>Hello, My Name is Steven</title>
+  <title>Hello, My Name is Steven — Project Index</title>
+  <link rel="icon" href="web/assets/favicon.png">
   <style>
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#06030a;color:#fff7ff;font-family:system-ui,sans-serif}
-    a{color:#ff8bd8}
+    :root {
+      --ink:#20212a; --paper:#f7efe5; --shell:#fff8ef; --deep:#203548; --rose:#d99abb; --ocean:#a8d8df;
+      --muted:#6d6d78; --line:rgba(32,33,42,.16); --shadow:rgba(36,30,40,.18);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 10% 0%,rgba(217,154,187,.26),transparent 26%),radial-gradient(circle at 90% 8%,rgba(168,216,223,.42),transparent 28%),linear-gradient(180deg,#eef8f8 0%,var(--paper) 34%,#efe4d7 100%)}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.26;background-image:radial-gradient(circle,rgba(32,33,42,.16) 0 .55px,transparent .7px),repeating-linear-gradient(0deg,rgba(255,255,255,.4) 0 1px,transparent 1px 6px);background-size:17px 17px,auto;mix-blend-mode:multiply}
+    .wrap{position:relative;width:min(1180px,calc(100% - 28px));margin:0 auto;padding:28px 0 72px}.crumb{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;color:var(--muted);font-size:.92rem}.crumb strong{color:var(--deep)}
+    .hero{border:1px solid var(--line);border-radius:36px;padding:clamp(26px,6vw,70px);background:rgba(255,248,239,.82);box-shadow:0 28px 90px var(--shadow);overflow:hidden;position:relative}.hero:after{content:"";position:absolute;right:-8%;top:-12%;width:420px;height:420px;background:url('web/assets/glass_horizon_icon.png') center/contain no-repeat;opacity:.13;filter:blur(.2px)}
+    .eyebrow{margin:0 0 12px;text-transform:uppercase;letter-spacing:.18em;color:#9e496c;font-weight:900;font-size:.78rem}.hero h1{position:relative;margin:0;font-size:clamp(3.4rem,9vw,8.8rem);line-height:.82;letter-spacing:-.075em}.subtitle{font-family:Georgia,"Times New Roman",serif;font-style:italic;color:var(--deep);font-size:clamp(1.35rem,3vw,2.6rem);margin:20px 0 0}.latin{text-transform:uppercase;letter-spacing:.17em;color:var(--muted);font-size:.9rem}.tag{max-width:790px;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.55}.status{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{border:1px solid var(--line);background:rgba(255,255,255,.55);border-radius:999px;padding:8px 11px;font-weight:800;color:var(--deep);font-size:.9rem}
+    .section-title{margin:34px 0 14px;font-size:clamp(1.8rem,4vw,3.4rem);letter-spacing:-.055em}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:26px;padding:22px;background:rgba(255,248,239,.82);box-shadow:0 16px 48px rgba(36,30,40,.10);min-height:188px;transition:transform .16s ease, box-shadow .16s ease}.card:hover{transform:translateY(-3px);box-shadow:0 22px 65px rgba(36,30,40,.16)}.card .label{text-transform:uppercase;letter-spacing:.16em;color:#9e496c;font-weight:900;font-size:.72rem}.card h2{margin:10px 0 8px;font-size:1.65rem;line-height:1;letter-spacing:-.04em}.card p{color:#4d4b54;line-height:1.48}.recommended{outline:2px solid rgba(217,154,187,.52)}
+    .path{display:grid;gap:10px;margin-top:14px}.step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.43)}.num{font-weight:950;color:#9e496c}.footer{margin-top:34px;padding:18px;border-top:1px solid var(--line);color:var(--muted);line-height:1.5}.footer a{color:var(--deep);font-weight:800}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.hero{border-radius:24px}.card{min-height:auto}.hero h1{font-size:clamp(3rem,17vw,6rem)}}
   </style>
 </head>
 <body>
-  <main>
-    <h1>HELLO, MY NAME IS STEVEN</h1>
-    <p>Opening the Glass Horizons web application…</p>
-    <p><a href="web/landing.html">Enter the public landing prototype</a></p>
-    <p><a href="web/">Enter the visual novel scaffold</a></p>
-    <p><a href="web/paper.html">View the Paper Writ / Overleaf prototype</a></p>
+  <main class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><strong>Project Index</strong><span>/</span><span>Magic Link Home</span></nav>
+    <section class="hero">
+      <p class="eyebrow">Steven Owens / @soquarky / soquarky.click</p>
+      <h1>Hello, My Name is Steven</h1>
+      <p class="subtitle">The Lived Experience of Habeas Corpus</p>
+      <p class="latin">Lex Duodecim Tabularum</p>
+      <p class="tag">One index. One project map. From here you can reach the public landing page, Paper Writ prototype, visual novel, timeline map, design lab, EPUB, source prompts, governance protocol, and attorney-ready review system.</p>
+      <div class="status" aria-label="Project status">
+        <span class="pill">Pacific Time / Ocean Shores context</span>
+        <span class="pill">Author-controlled</span>
+        <span class="pill">No assumptions</span>
+        <span class="pill">Attorney-ready review layer</span>
+      </div>
+    </section>
+
+    <h2 class="section-title">Recommended Reader Path</h2>
+    <section class="path" aria-label="Recommended path">
+      <div class="step"><span class="num">01</span><span><strong>Start with the Public Landing page</strong> for the cleanest public-facing author/book entrance.</span></div>
+      <div class="step"><span class="num">02</span><span><strong>Open Paper Writ</strong> for the Overleaf/ocean-hush book visual direction.</span></div>
+      <div class="step"><span class="num">03</span><span><strong>Enter Visual Novel</strong> for the interactive Glass Horizons version.</span></div>
+      <div class="step"><span class="num">04</span><span><strong>Use Timeline Map and Source Tools</strong> for roadmap, extraction, and legal/editorial organization.</span></div>
+    </section>
+
+    <h2 class="section-title">Project Pages</h2>
+    <section class="grid" aria-label="Primary project pages">
+      <a class="card recommended" href="web/landing.html"><span class="label">Start Here</span><h2>Public Landing</h2><p>Raw Witness public-facing author/book page for Steven Owens / @soquarky.</p></a>
+      <a class="card recommended" href="web/paper.html"><span class="label">Book Visual</span><h2>Paper Writ</h2><p>Soft ocean-hush, textured paper, LaTeX/Overleaf-inspired legal-literary prototype.</p></a>
+      <a class="card" href="web/index.html"><span class="label">Interactive</span><h2>Visual Novel</h2><p>Glass Horizons visual novel scaffold with nodes, images, search, and EPUB link.</p></a>
+      <a class="card" href="web/map.html"><span class="label">Roadmap</span><h2>Timeline Map</h2><p>Approved-coordinate map layer, Google My Maps CSV, KML, and GeoJSON exports.</p></a>
+      <a class="card" href="web/design-lab.html"><span class="label">Visual Options</span><h2>Design Lab</h2><p>Compares Raw Witness, Evidence Noir, Organic Signal, and Public Record Horizon.</p></a>
+      <a class="card" href="downloads/hello_my_name_is_steven.epub" download><span class="label">Download</span><h2>EPUB</h2><p>Download the current generated EPUB draft artifact.</p></a>
+    </section>
+
+    <h2 class="section-title">Editorial / Legal / Source System</h2>
+    <section class="grid" aria-label="Documentation and source system">
+      <a class="card" href="governance/project_governance_protocol.md"><span class="label">Protocol</span><h2>Governance</h2><p>Timestamp standard, no-assumption rule, voice rule, options protocol, CEO sign-off threshold.</p></a>
+      <a class="card" href="legal/publication_review_checklist.md"><span class="label">Legal Review</span><h2>Publication Checklist</h2><p>Source integrity, legal risk, medical risk, author-control, public/private boundary.</p></a>
+      <a class="card" href="docs/source_extraction_master_prompt.json"><span class="label">Extraction</span><h2>JSON Prompt</h2><p>NotebookLM/Gemini master JSON extraction prompt for timeline, statements, map points, and chapters.</p></a>
+      <a class="card" href="timeline/master_timeline.csv"><span class="label">Chronology</span><h2>Master Timeline</h2><p>Canonical approved timeline CSV, beginning June 2025.</p></a>
+      <a class="card" href="project_log/decision_log.csv"><span class="label">Transparency</span><h2>Decision Log</h2><p>Timestamped record of major editorial/governance decisions.</p></a>
+      <a class="card" href="README.md"><span class="label">Repository</span><h2>README</h2><p>Complete project structure, build notes, EPUB pipeline, source ingest, and map roadmap.</p></a>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Breadcrumb rule:</strong> use this page as the one magic-link home base. Every major HTML page now links back here as <em>Project Index</em>.</p>
+      <p>Repository: <a href="https://github.com/Artistso2/Hmnis-">github.com/Artistso2/Hmnis-</a></p>
+    </footer>
   </main>
 </body>
 </html>
