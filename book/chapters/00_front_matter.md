@@ -1,5 +1,11 @@
 # Hello, My Name is Steven
 
+## The Lived Experience of Habeas Corpus
+
+**Lex Duodecim Tabularum**
+
+*You shall have the body. You shall have the record. You shall have the voice.*
+
 ## Author-Control Notice
 
 This manuscript is built from Steven’s words, Steven’s verbiage, Steven’s chronology, Steven’s evidence, Steven’s body, Steven’s thoughts, and Steven’s lived sequence of discovery.

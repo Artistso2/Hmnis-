@@ -1,0 +1,67 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hmnis}[2026/06/27 HMNIS visual writ style]
+
+\RequirePackage[margin=1.05in]{geometry}
+\RequirePackage{xcolor}
+\RequirePackage{titlesec}
+\RequirePackage{tcolorbox}
+\RequirePackage{fancyhdr}
+\RequirePackage{marginnote}
+\RequirePackage{setspace}
+\RequirePackage{hyperref}
+\RequirePackage{enumitem}
+
+\definecolor{HMNISInk}{HTML}{20212A}
+\definecolor{HMNISMuted}{HTML}{6D6D78}
+\definecolor{HMNISOcean}{HTML}{A8D8DF}
+\definecolor{HMNISRose}{HTML}{D99ABB}
+\definecolor{HMNISShell}{HTML}{FFF8EF}
+\definecolor{HMNISDeep}{HTML}{203548}
+
+\pagecolor{HMNISShell}
+\color{HMNISInk}
+\onehalfspacing
+
+\hypersetup{colorlinks=true, linkcolor=HMNISDeep, urlcolor=HMNISDeep, citecolor=HMNISDeep}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textsc{Hello, My Name is Steven}}
+\rhead{\small\textsc{Lex Duodecim Tabularum}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\Huge\color{HMNISInk}}
+  {\textsc{Clause \thechapter}}
+  {0.5em}
+  {\Huge}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{HMNISDeep}}
+  {\thesection}{0.7em}{}
+
+\newtcolorbox{writbox}[1]{
+  colback=white,
+  colframe=HMNISOcean,
+  coltitle=HMNISDeep,
+  title=\textbf{#1},
+  arc=2mm,
+  boxrule=0.6pt,
+  left=8pt,right=8pt,top=8pt,bottom=8pt
+}
+
+\newtcolorbox{evidencebox}[1]{
+  colback=HMNISShell,
+  colframe=HMNISRose,
+  coltitle=HMNISInk,
+  title=\textbf{#1},
+  arc=2mm,
+  boxrule=0.6pt,
+  left=8pt,right=8pt,top=8pt,bottom=8pt
+}
+
+\newcommand{\source}[1]{\par\smallskip\noindent{\small\color{HMNISMuted}\textsc{Source:} #1}\par}
+\newcommand{\unknown}{\texttt{[UNKNOWN --- SOURCE DOES NOT PROVIDE THIS]}}
+\newcommand{\verify}{\texttt{[VERIFY]}}
+\newcommand{\latinmark}[1]{\begin{center}\small\textsc{#1}\end{center}}

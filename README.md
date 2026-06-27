@@ -166,3 +166,23 @@ See:
 ```text
 docs/notion_github_editorial_pipeline.md
 ```
+
+## Paper Writ / Overleaf-Inspired Prototype
+
+A softer LaTeX/Overleaf-inspired visual direction has been added:
+
+```text
+web/paper.html
+web/paper.css
+latex/main.tex
+latex/hmnis.sty
+docs/latex_overleaf_visual_system.md
+```
+
+This direction uses soft ocean hush, pastel textured paper, legal/source boxes, marginal-note thinking, and title-page gravity:
+
+```text
+Hello, My Name is Steven
+The Lived Experience of Habeas Corpus
+Lex Duodecim Tabularum
+```
