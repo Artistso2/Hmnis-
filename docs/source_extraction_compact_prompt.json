@@ -1,0 +1,132 @@
+{
+  "prompt_name": "HMNIS_Compact_Source_Extraction_JSON_v1",
+  "instruction": "Use only uploaded sources. Extract source-grounded data for HELLO, MY NAME IS STEVEN by Steven Owens / @soquarky. Do not invent facts. Preserve Steven's wording. Mark unknowns as [UNKNOWN — SOURCE DOES NOT PROVIDE THIS]. Mark verification needs as [VERIFY]. Do not smooth contradictions.",
+  "narrative_rule": "Start June 2025 and move forward linearly. Past enters only through memory recursion, evidence review, or due diligence.",
+  "outputs": {
+    "source_inventory": [
+      "source_id_candidate",
+      "filename_or_title",
+      "source_type",
+      "date_range",
+      "primary_subject",
+      "priority",
+      "notes"
+    ],
+    "timeline_csv": [
+      "event_id_candidate",
+      "start_date",
+      "end_date",
+      "time_text_from_source",
+      "timeline_layer",
+      "location_text",
+      "event_title",
+      "steven_words",
+      "source_summary_no_new_facts",
+      "source_filename_or_title",
+      "citation_or_quote_anchor",
+      "evidence_label",
+      "verification_status",
+      "map_relevant_yes_no",
+      "contradiction_notes",
+      "next_verification_step"
+    ],
+    "statement_bank_csv": [
+      "statement_id",
+      "exact_quote",
+      "source_filename_or_title",
+      "citation_or_quote_anchor",
+      "apparent_date",
+      "statement_category",
+      "emotional_register",
+      "possible_book_use",
+      "notes"
+    ],
+    "contradictions_csv": [
+      "contradiction_id",
+      "issue",
+      "version_A",
+      "source_for_version_A",
+      "version_B",
+      "source_for_version_B",
+      "why_it_matters",
+      "recommended_next_verification_step",
+      "preserve_as_story_tension_yes_no"
+    ],
+    "locations_csv": [
+      "location_id_candidate",
+      "location_text_exactly_as_source_says_it",
+      "location_type",
+      "associated_date_or_date_range",
+      "associated_event",
+      "source_filename_or_title",
+      "citation_or_quote_anchor",
+      "address_or_description",
+      "city",
+      "state",
+      "country",
+      "coordinate_if_source_provides_it",
+      "map_confidence",
+      "verification_needed"
+    ],
+    "chapter_candidates_csv": [
+      "chapter_candidate_id",
+      "proposed_title_from_Steven_words_if_possible",
+      "present_date_or_month",
+      "present_action",
+      "body_log_focus",
+      "memory_recursion_trigger",
+      "due_diligence_action",
+      "source_documents_needed",
+      "direct_quotes_to_use",
+      "ending_turn",
+      "confidence",
+      "notes"
+    ],
+    "visual_nodes_csv": [
+      "node_id_candidate",
+      "date",
+      "location",
+      "speaker",
+      "node_text_using_Steven_words",
+      "image_motif_recommendation",
+      "tags",
+      "choices_or_next_node_options",
+      "source_filename_or_title",
+      "citation_or_quote_anchor",
+      "evidence_label",
+      "verification_status"
+    ]
+  },
+  "allowed_labels": {
+    "timeline_layer": [
+      "PRESENT_LINEAR",
+      "MEMORY_RECURSION",
+      "DUE_DILIGENCE",
+      "BODY_LOG",
+      "SYSTEM_CONTACT",
+      "DIGITAL_LOG",
+      "MAP_POINT",
+      "LEGAL_OR_HOUSING",
+      "AI_OR_TECH_SHOCK",
+      "WRITING_OR_PROJECT_BUILD"
+    ],
+    "evidence_label": [
+      "STEVEN_WORDS",
+      "TIMELINE_DECLARATION",
+      "SOURCE_MATERIAL",
+      "MEMORY_RETURN",
+      "BODY_EVIDENCE",
+      "LOGIC_REASONING",
+      "UNVERIFIED_DO_NOT_EXPAND"
+    ],
+    "verification_status": [
+      "AUTHOR_DECLARED",
+      "SOURCE_EXTRACTED",
+      "NEEDS_REVIEW",
+      "VERIFIED_BY_SOURCE",
+      "CONFLICT",
+      "FICTIONALIZED"
+    ]
+  },
+  "final_instruction": "Return a structured report plus copy/paste CSV blocks. Every row must include a source filename/title or citation anchor."
+}

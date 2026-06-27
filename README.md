@@ -144,3 +144,25 @@ https://artistso2.github.io/Hmnis-/web/map.html
 ```
 
 No Google API key is stored in the public repo. Use `maps/google_my_maps_import.csv` or `maps/locations.kml` to import approved locations into Google My Maps.
+
+## NotebookLM / Gemini JSON Extraction Prompts
+
+Prompt files for large source batches are stored in:
+
+```text
+docs/source_extraction_master_prompt.json
+docs/source_extraction_compact_prompt.json
+docs/notebooklm_source_extraction_prompt_pack.md
+```
+
+Use these to extract timeline events, statement banks, contradictions, locations, entities, chapter candidates, and visual novel nodes from AI chat exports or other source documents.
+
+## Notion Editorial Pipeline
+
+Notion can be used as the editorial CMS and approval board before GitHub publication.
+
+See:
+
+```text
+docs/notion_github_editorial_pipeline.md
+```

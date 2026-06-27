@@ -1,0 +1,467 @@
+{
+  "prompt_name": "HMNIS_Source_Extraction_Master_JSON_v1",
+  "project": {
+    "title": "HELLO, MY NAME IS STEVEN",
+    "author_identity": "Steven Owens / @soquarky / soquarky.click",
+    "purpose": "Extract source-grounded timeline, statements, locations, contradictions, entities, chapter candidates, and visual novel nodes from large batches of AI chats and documents.",
+    "core_rule": "Steven's words are the source. Steven's chronology is the spine. Steven's perspective is the camera."
+  },
+  "operator_instruction": "Read this JSON as the controlling instruction set. Execute every enabled task using only the uploaded sources. Do not treat this JSON as source evidence; treat it as extraction instructions.",
+  "role": {
+    "name": "source analyst, chronology clerk, editorial assistant, and archive mapper",
+    "allowed_functions": [
+      "extract direct quotes",
+      "summarize without adding facts",
+      "identify dates and date ranges",
+      "identify locations and map-relevant items",
+      "identify body evidence and medical-language candidates without diagnosing",
+      "identify legal or system-contact language without making legal conclusions",
+      "identify contradictions and gaps",
+      "propose chapter and visual novel node candidates from source material only"
+    ],
+    "forbidden_functions": [
+      "invent facts",
+      "invent names",
+      "invent dates",
+      "invent agencies",
+      "invent diagnoses",
+      "invent legal conclusions",
+      "invent medical conclusions",
+      "invent dialogue",
+      "invent motives",
+      "invent scenes",
+      "smooth contradictions",
+      "replace Steven's verbiage with generic thriller prose"
+    ]
+  },
+  "source_scope": {
+    "rule": "Use only the uploaded sources in the current Notebook/session/batch.",
+    "if_unknown": "[UNKNOWN — SOURCE DOES NOT PROVIDE THIS]",
+    "if_needs_verification": "[VERIFY]",
+    "citation_rule": "For every extracted item, include a citation if the platform supports citations. If not, include source filename/title and the closest exact quote anchor."
+  },
+  "narrative_control": {
+    "starting_point": "Steven wakes in June 2025.",
+    "timeline_rule": "From June 2025 forward, the story moves linearly in real time.",
+    "past_entry_rule": "Past events enter only through memory recursion, evidence review, or due diligence performed by Steven.",
+    "point_of_view_rule": "Use only Steven's perspective or source material Steven has provided/accessed. No omniscient outside scenes."
+  },
+  "labels": {
+    "timeline_layer_values": [
+      "PRESENT_LINEAR",
+      "MEMORY_RECURSION",
+      "DUE_DILIGENCE",
+      "BODY_LOG",
+      "SYSTEM_CONTACT",
+      "DIGITAL_LOG",
+      "MAP_POINT",
+      "LEGAL_OR_HOUSING",
+      "AI_OR_TECH_SHOCK",
+      "WRITING_OR_PROJECT_BUILD"
+    ],
+    "evidence_label_values": [
+      "STEVEN_WORDS",
+      "TIMELINE_DECLARATION",
+      "SOURCE_MATERIAL",
+      "MEMORY_RETURN",
+      "BODY_EVIDENCE",
+      "LOGIC_REASONING",
+      "UNVERIFIED_DO_NOT_EXPAND"
+    ],
+    "verification_status_values": [
+      "AUTHOR_DECLARED",
+      "SOURCE_EXTRACTED",
+      "NEEDS_REVIEW",
+      "VERIFIED_BY_SOURCE",
+      "CONFLICT",
+      "FICTIONALIZED"
+    ],
+    "location_type_values": [
+      "ADDRESS",
+      "CITY",
+      "REGION",
+      "ROOM",
+      "ROUTE",
+      "INSTITUTION",
+      "BUSINESS",
+      "ROAD_OR_HIGHWAY",
+      "UNKNOWN"
+    ],
+    "statement_category_values": [
+      "AUTHOR_CONTROL_RULE",
+      "AWAKENING",
+      "AMNESIA_RECURSION",
+      "BODY_EVIDENCE",
+      "DUE_DILIGENCE",
+      "SYSTEMIC_CRUSHING",
+      "KIDNAP_VICTIM_ONGOING",
+      "AI_TECH_SHOCK",
+      "CPTSD",
+      "LEGAL_WRIT",
+      "FOOD_SHELTER_SURVIVAL",
+      "CATS",
+      "MAP_OR_GEOGRAPHY",
+      "PHILOSOPHY_OR_MATH",
+      "PUBLIC_IDENTITY"
+    ],
+    "possible_book_use_values": [
+      "CHAPTER_TITLE",
+      "OPENING_LINE",
+      "SECTION_EPIGRAPH",
+      "VISUAL_NOVEL_NODE",
+      "WEBSITE_COPY",
+      "TIMELINE_LABEL",
+      "LEGAL_WRIT_LANGUAGE",
+      "RAW_SOURCE_ONLY"
+    ],
+    "visual_motif_values": [
+      "RAW_WITNESS",
+      "EVIDENCE_NOIR",
+      "ORGANIC_SIGNAL",
+      "GLASS_HORIZON",
+      "PUBLIC_RECORD_HORIZON",
+      "NO_IMAGE_YET"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "source_inventory",
+      "enabled": true,
+      "instruction": "Create an inventory of all uploaded sources and classify what each source appears to contain without inventing missing metadata.",
+      "output_format": "markdown_table",
+      "columns": [
+        "source_id_candidate",
+        "filename_or_title",
+        "source_type",
+        "apparent_date_or_date_range",
+        "platform_or_origin",
+        "primary_subject",
+        "contains_direct_Steven_words_yes_no",
+        "contains_timeline_events_yes_no",
+        "contains_locations_yes_no",
+        "contains_body_evidence_yes_no",
+        "contains_system_contact_yes_no",
+        "contains_AI_or_technology_material_yes_no",
+        "extraction_priority_high_medium_low",
+        "notes"
+      ]
+    },
+    {
+      "id": "comprehensive_timeline",
+      "enabled": true,
+      "instruction": "Extract a comprehensive source-grounded timeline. Preserve approximate date wording. Do not merge events unless the source clearly describes the same event. Do not resolve contradictions; flag them.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "event_id_candidate",
+        "start_date",
+        "end_date",
+        "time_text_from_source",
+        "timeline_layer",
+        "location_text",
+        "event_title",
+        "steven_words",
+        "source_summary_no_new_facts",
+        "source_filename_or_title",
+        "citation_or_quote_anchor",
+        "evidence_label",
+        "verification_status",
+        "map_relevant_yes_no",
+        "contradiction_notes",
+        "next_verification_step"
+      ]
+    },
+    {
+      "id": "month_by_month_forward_sequence",
+      "enabled": true,
+      "instruction": "Build a month-by-month sequence starting at June 2025 and moving forward. Put any pre-June-2025 material under the month when Steven recalls, researches, or verifies it, not as a normal flashback unless the source explicitly requires it.",
+      "output_format": "structured_report",
+      "sections_per_month": [
+        "events Steven says happened in that month",
+        "body status / medical or physical details",
+        "memory recursion events",
+        "AI / internet / technology use",
+        "food / shelter / cats / survival status",
+        "system contacts or institutional interactions",
+        "locations or map points",
+        "supporting source documents",
+        "contradictions or missing details",
+        "best chapter-scaffold use"
+      ]
+    },
+    {
+      "id": "statement_bank",
+      "enabled": true,
+      "instruction": "Extract Steven's strongest direct phrases and declarations. Exact quote first; paraphrase only as a separate note. Prioritize recurring language that defines the book's voice.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "statement_id",
+        "exact_quote",
+        "source_filename_or_title",
+        "citation_or_quote_anchor",
+        "apparent_date",
+        "statement_category",
+        "emotional_register",
+        "possible_book_use",
+        "notes"
+      ]
+    },
+    {
+      "id": "contradiction_gap_ledger",
+      "enabled": true,
+      "instruction": "Create a contradiction and gap ledger. Do not solve contradictions unless a source explicitly resolves them. Preserve contradictions as possible detective structure.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "contradiction_id",
+        "issue",
+        "version_A",
+        "source_for_version_A",
+        "version_B",
+        "source_for_version_B",
+        "additional_versions_if_any",
+        "why_it_matters",
+        "likely_category",
+        "recommended_next_verification_step",
+        "should_this_be_preserved_as_story_tension_yes_no"
+      ]
+    },
+    {
+      "id": "location_map_extraction",
+      "enabled": true,
+      "instruction": "Extract all map-relevant locations. Do not invent coordinates. If no coordinate is provided, leave coordinate blank and mark [VERIFY].",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "location_id_candidate",
+        "location_text_exactly_as_source_says_it",
+        "location_type",
+        "associated_date_or_date_range",
+        "associated_event",
+        "source_filename_or_title",
+        "citation_or_quote_anchor",
+        "address_or_description",
+        "city",
+        "state",
+        "country",
+        "coordinate_if_source_provides_it",
+        "map_confidence_high_medium_low",
+        "public_display_yes_no_maybe",
+        "verification_needed",
+        "notes"
+      ]
+    },
+    {
+      "id": "people_agency_system_contact_ledger",
+      "enabled": true,
+      "instruction": "Extract named or described people, agencies, institutions, platforms, businesses, and systems. Do not decide guilt or legal truth. Flag public naming risk.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "entity_id",
+        "entity_name_or_alias_as_source_says_it",
+        "entity_type",
+        "role_as_described_by_source",
+        "associated_events",
+        "associated_dates",
+        "source_filename_or_title",
+        "citation_or_quote_anchor",
+        "direct_quote",
+        "public_naming_risk_high_medium_low",
+        "should_alias_in_public_draft_yes_no_maybe",
+        "notes"
+      ]
+    },
+    {
+      "id": "body_evidence_ledger",
+      "enabled": true,
+      "instruction": "Extract body evidence and physical-state language without diagnosing. Include walking, talking, hunger, pain, neuropathy, vision, hearing, panic, CPTSD language, sleep, medications, medical visits, and physical limitations as source statements only.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "body_item_id",
+        "date_or_time_text",
+        "body_detail_exact_quote",
+        "body_category",
+        "source_summary_no_new_facts",
+        "source_filename_or_title",
+        "citation_or_quote_anchor",
+        "medical_interpretation_needed_yes_no",
+        "verification_status",
+        "notes"
+      ]
+    },
+    {
+      "id": "chapter_candidates",
+      "enabled": true,
+      "instruction": "Propose chapter candidates using only source material. The book begins in June 2025 and moves forward linearly. Use Steven's phrases for titles when possible. Do not invent scenes.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "chapter_candidate_id",
+        "proposed_title_from_Steven_words_if_possible",
+        "present_date_or_month",
+        "present_action",
+        "body_log_focus",
+        "memory_recursion_trigger",
+        "due_diligence_action",
+        "source_documents_needed",
+        "direct_quotes_to_use",
+        "ending_turn",
+        "confidence_high_medium_low",
+        "notes"
+      ]
+    },
+    {
+      "id": "visual_novel_nodes",
+      "enabled": true,
+      "instruction": "Convert approved source material into short visual novel node candidates. Use Steven's wording where possible. Every node needs source anchor and evidence status.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "node_id_candidate",
+        "date",
+        "location",
+        "speaker",
+        "node_text_using_Steven_words",
+        "image_motif_recommendation",
+        "tags",
+        "choices_or_next_node_options",
+        "source_filename_or_title",
+        "citation_or_quote_anchor",
+        "evidence_label",
+        "verification_status"
+      ]
+    },
+    {
+      "id": "public_facing_safety_review",
+      "enabled": true,
+      "instruction": "Review any proposed public-facing summary for invented facts, uncited claims, unnecessary living-person names, legal overstatement, medical overstatement, generic prose replacing Steven's voice, or smoothed contradictions.",
+      "output_format": "csv_compatible_table",
+      "columns": [
+        "issue",
+        "problematic_wording",
+        "why_it_is_a_problem",
+        "safer_author_controlled_revision",
+        "source_needed"
+      ]
+    }
+  ],
+  "batching_strategy": {
+    "recommended_batch_size": "25 to 50 documents per NotebookLM batch when documents are long; up to 300 if documents are short and NotebookLM handles the context.",
+    "batch_id_format": "BATCH-YYYY-MM-topic-number",
+    "batch_report_title_format": "HMNIS Source Extraction — {batch_id} — {date_range_or_topic}",
+    "after_each_batch": [
+      "export source inventory",
+      "export comprehensive timeline CSV",
+      "export statement bank CSV",
+      "export contradiction ledger CSV",
+      "export location/map CSV",
+      "export chapter candidates",
+      "export visual novel node candidates"
+    ]
+  },
+  "notion_mapping": {
+    "purpose": "Use Notion as editorial CMS, review board, and human approval layer before GitHub publication.",
+    "databases": {
+      "Sources": [
+        "source_id",
+        "title",
+        "file",
+        "source_type",
+        "date_range",
+        "processing_status",
+        "priority",
+        "notes"
+      ],
+      "Timeline Events": [
+        "event_id",
+        "start_date",
+        "time_text",
+        "timeline_layer",
+        "title",
+        "steven_words",
+        "source_id",
+        "verification_status",
+        "map_relevant"
+      ],
+      "Statement Bank": [
+        "statement_id",
+        "exact_quote",
+        "category",
+        "possible_book_use",
+        "source_id",
+        "approval_status"
+      ],
+      "Locations": [
+        "location_id",
+        "label",
+        "address_or_description",
+        "latitude",
+        "longitude",
+        "source_id",
+        "verification_status",
+        "public_display"
+      ],
+      "Contradictions": [
+        "contradiction_id",
+        "issue",
+        "versions",
+        "why_it_matters",
+        "next_verification_step",
+        "story_tension"
+      ],
+      "Chapters": [
+        "chapter_id",
+        "title",
+        "present_month",
+        "body_focus",
+        "memory_trigger",
+        "source_documents",
+        "draft_status"
+      ],
+      "Visual Nodes": [
+        "node_id",
+        "date",
+        "speaker",
+        "node_text",
+        "image_motif",
+        "source_id",
+        "verification_status"
+      ]
+    },
+    "approval_status_values": [
+      "raw",
+      "extracted",
+      "needs_review",
+      "approved",
+      "public",
+      "private_archive_only"
+    ]
+  },
+  "final_response_format": {
+    "instruction": "Return the report in this exact section order. If data is too large, provide the first section and say which section should be requested next.",
+    "sections": [
+      "1. Batch Executive Summary",
+      "2. Source Inventory",
+      "3. Comprehensive Timeline CSV Table",
+      "4. Month-by-Month Forward Sequence",
+      "5. Steven Statement Bank",
+      "6. Contradiction and Gap Ledger",
+      "7. Location / Map Extraction",
+      "8. People / Agency / System Contact Ledger",
+      "9. Body Evidence Ledger",
+      "10. Chapter Candidates",
+      "11. Visual Novel Node Candidates",
+      "12. Public-Facing Safety Review",
+      "13. Items Requiring Steven Approval",
+      "14. Copy/Paste CSV Blocks"
+    ]
+  },
+  "quality_control": {
+    "before_answering_checklist": [
+      "Did I use only uploaded sources?",
+      "Did I preserve exact Steven wording where possible?",
+      "Did I mark unknowns instead of inventing?",
+      "Did I mark verification needs?",
+      "Did I avoid legal/medical conclusions?",
+      "Did I keep contradictions instead of smoothing them?",
+      "Did every extracted item have a source anchor?",
+      "Did I keep June 2025 as the forward-moving narrative start?"
+    ],
+    "failure_mode_instruction": "If you cannot complete all tasks due to context limits, complete source inventory and comprehensive timeline first, then ask for permission to continue with statement bank, contradictions, locations, and chapter candidates."
+  }
+}
