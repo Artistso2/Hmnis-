@@ -234,3 +234,25 @@ web/navigation.js
 ```
 
 This injects a breadcrumb/top navigation bar back to the Project Index and key project pages.
+
+## Formal Academic Writ Page
+
+Added a Stanford/Harvard dissertation-inspired formal page without institutional branding or futuristic tech aesthetics:
+
+```text
+web/writ.html
+web/writ.css
+docs/formal_academic_writ_visual_standard.md
+```
+
+This page frames the project as a living writ cycle:
+
+```text
+lived event → source → extraction → timeline → review → chapter/node/map → publication → submission packet
+```
+
+All major web pages now include the shared footer identity:
+
+```text
+Steven Owens / @soquarky / soquarky.click
+```

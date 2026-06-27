@@ -23,3 +23,16 @@
 @media (max-width: 760px) {
   .hmnis-global-nav { position: relative; align-items: flex-start; flex-direction: column; }
 }
+.hmnis-global-footer {
+  margin-top: 48px;
+  padding: 22px 16px;
+  border-top: 1px solid rgba(32,33,42,.14);
+  background: rgba(255, 248, 239, 0.82);
+  color: #5f5b55;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: center;
+  line-height: 1.55;
+}
+.hmnis-global-footer a { color: #203548; font-weight: 850; text-decoration: none; }
+.hmnis-global-footer a:hover { text-decoration: underline; }
+.hmnis-global-footer strong { color: #20212a; }
