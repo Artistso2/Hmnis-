@@ -186,3 +186,34 @@ Hello, My Name is Steven
 The Lived Experience of Habeas Corpus
 Lex Duodecim Tabularum
 ```
+
+## Governance / Legal / Timestamp Protocol
+
+The project now includes a governance layer:
+
+```text
+governance/project_governance_protocol.md
+governance/options_protocol.md
+project_log/decision_log.csv
+project_log/project_events.csv
+legal/claim_ledger.csv
+legal/entity_risk_ledger.csv
+legal/publication_review_checklist.md
+legal/attorney_packet_template.md
+scripts/log_project_event.py
+scripts/new_decision.py
+scripts/build_attorney_packet.py
+```
+
+Default lived-time standard:
+
+```text
+Pacific Time / America/Los_Angeles
+Ocean Shores, Washington 98569 context
+```
+
+Public/legal review principle:
+
+```text
+Private raw first-person Steven voice; public materials attorney-ready, source-grounded, transparent, and reviewed.
+```

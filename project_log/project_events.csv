@@ -1,0 +1,2 @@
+event_id,created_at_pacific,created_at_utc,event_type,title,summary,source_or_file,actor,notes
+EVTLOG-2026-06-26-0001,2026-06-26T23:16:18-07:00,2026-06-27T06:16:18+00:00,GOVERNANCE,"Governance, timestamp, and attorney-ready protocol added","Added Pacific Time logging, options protocol, decision log, legal ledgers, publication checklist, and attorney packet template.",governance/ legal/ project_log/ scripts/,Arena Agent,"Based on Steven's stated preferences: Ocean Shores/Pacific time, no assumptions, private raw first-person voice, attorney-ready rigor."
